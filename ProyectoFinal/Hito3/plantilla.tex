@@ -19,6 +19,7 @@
 \usepackage{hyperref} %INDICE CON VINCULOS
 \usepackage{csquotes}
 
+
 %----------------------------------------------------------------------------------------
 %	PAGE HEADERS
 %----------------------------------------------------------------------------------------
@@ -79,8 +80,8 @@
 %----------------------------------------------------------------------------------------
 
 \HRule \\[0.4cm]
-{ \huge \bfseries HITO 3: FRAMEWORK DE DISEÑO }\\[0.4cm] % Titulo
-{ \huge \bfseries MODELADO Y REQUISITOS}\\[0.2cm] % Titulo
+{ \huge \bfseries HITO 3: }\\[0.4cm] % Titulo
+{ \huge \bfseries FRAMEWORK DE DISEÑO }\\[0.2cm] % Titulo
 \HRule \\[1.2cm]
  
 %----------------------------------------------------------------------------------------
@@ -103,7 +104,7 @@ Darío \textsc{Gallegos}
 \emph{Profesor:} \\
 Antonio \textsc{Sánchez} % NOMBRE PROFESOR
 \end{flushright}
-\end{minipage}\\[0.85cm]
+\end{minipage}\\[0.66cm]
 %----------------------------------------------------------------------------------------
 %	FECHA SECCION
 %----------------------------------------------------------------------------------------
@@ -130,15 +131,41 @@ Antonio \textsc{Sánchez} % NOMBRE PROFESOR
 
 \section{Introducción}
 
+Estamos siendo fieles a la esencia del proceso DGO: Diseño guiado por objetivos, por lo que nuestra prioridad hasta ahora ha sido detectar los objetivos que el usuario persigue al usar nuestro sistema. Hasta ahora hemos sido bastante abiertos a la hora de integrar o aceptar las funcionalidades que hemos extraído de las entrevistas convirtiéndose en requisitos y pueden automatizar en cierta manera el uso de la biblioteca, pero a partir de este momento nos vamos a centrar en las siguientes funcionalidades básicas, con vistas a llegar a una definición final del sistema interactivo que nos dé tiempo a desarrollar en el trascurso de la asignatura:
 
+\begin{itemize}
 
+\item \textbf{Reserva de puestos en la biblioteca (inspirada en la aplicación car2go, es decir, con 10 minutos de reserva para evitar exceso de puestos reservados no ocupados, sin dejar de ofrecer la funcionalidad)}
+\item \textbf{Exploración del catálogo de la biblioteca María Zambrano}
+\item \textbf{Funcionalidad de Check in / Check out de los usuarios que permita un control de los puestos ocupados en la biblioteca, la renovación de una reserva, así como pausarla por 5-10 minutos}
 
+\end{itemize}
 
 \section{Alcance del hito}
 Se ha de explicar porque nos vamos a centrar en el usuario y no en el resto de roles, como va ha afectar a la aplicación.
 
+Debido a que la faceta más novedosa de nuestra aplicación se desarrolla en el lado del estudiante, por las diversas funcionalidades que hemos incluido, hemos decidido centrarnos en el diseño de esta vista, en vez de el acceso de administración/gestión que utilizaría el personal de la biblioteca.
+
+Se ha descartado la opción de reserva de libros ya que supondría la introducción de un departamento de transporte de éstos entre bibliotecas de la UCM con su consiguiente impacto económico.
+
+Respecto al sistema de Check in en los puestos de la biblioteca, hemos contemplado dos opciones, con los siguientes inconvenientes:
+
+\begin{itemize}
+\item \textbf{Código QR en el puesto - Scan vía terminal móvil con cámara: Esta opción sería bastante asequible, pero aporta la posibilidad del deterioro de los QR y la necesidad de su renovación periódica.}
+
+\item \textbf{Generación de QR en la App. - Scanner en el puesto: El QR incluye el tiempo de reserva seleccionado por el usuario. Esta opción es la más cara. PENDIENTE DUDA PROFESOR CUÁL IMPLEMENTAR}
+\end{itemize}
+
+Por comodidad y coherencia con el sistema de la UCM hemos decidido que este servicio vaya asociado a la cuenta de los estudiantes UCM como un servicio más del Campus Virtual, no permitiendo alta de usuarios externos que al no tener carnet Complutense no podrían hacer uso de las instalaciones.
+
+Es también un punto muy importante a decidir si se llega a implantar el sistema cómo hacer la gestión de los puestos de los usuarios “de a pié”, que la utilizan del modo tradicional de asistencia sin reserva previa o incluso sin terminal móvil. Nosotros proponemos que la aplicación pude estar instalada en algunos ordenadores en la biblioteca donde estos usuarios podrían hacer sus gestiones, o que el personal de la biblioteca sea el encargado de asignar y gestionar desde su puesto de control la entrada/salida de este tipo de usuarios.
+
+
 
 \section{Organización y reparto de tareas}
+En busca de buenas ideas y de aportar lo mejor de cada miembro del equipo, comenzamos con un brainstorming de mockups. Este inicio nos ha permitido plantearnos de forma profunda el flujo de navegación sobre la interfaz, acercar posturas en cuanto al tratamiento de las funciones principales y ante la explosión de material, hemos escogido las mejores ideas para agrupar y presentar las funciones de la aplicación. A partir de este análisis hemos definido los keypaths 
+
+
 \begin{itemize}
 
 \item \textbf{Documentación}: Permite a todos los miembros de nuestro grupo disponer de las aptitudes y conocimientos necesarios para el siguiente hito.
@@ -179,8 +206,25 @@ Nota : Modificar la introduccion, hay que hacer enfasesis en que nos vamos a cen
 Apoyándonos en Sinnaps, una aplicación para la gestión de proyectos, de la misma manera que utilizamos en el hito 1, hemos querido distribuir el reparto de tareas con el objetivo de completar este hito que forma parte de nuestro proyecto final. Las tareas contienen los aspectos más importantes a cumplir, siendo las mismas divididas en subtareas. Detallamos las siguientes con el orden de prioridad correspondiente:
 
 \subsection{Definición del factor de forma}
+\begin{itemize}
+
+\item Como se aprecia en los escenarios de contexto los estudiantes van a utilizar la aplicación tanto dentro como de camino a la biblioteca, generalmente en un terminal móvil (Android o AppleIOS) aunque al ser un servicio (teóricamente)
+
+\item Se puede instalar la aplicación en un dispositivo tactil autónomo para que los estudiantes “de a pié” sin aplicación puedan hacer su auto-reserva (irrelevante para nuestro desarrollo)
+
+\end{itemize}
 \subsection{Definición de la postura}
+\begin{itemize}
+
+\item Consideramos que la postura del usuario ante nuestra aplicación es temporal ante todas sus funcionalidades ya que las operaciones no deben alargarse demasiado. A este respecto hemos incluido algunos iconos que directamente en el “Panel de Usuario” (Dashboard) indican con un color si el servicio no está disponible y la razón mediante un pop-up.
+
+\end{itemize}
 \subsection{Definicion del método de entrada}
+\begin{itemize}
+
+\item El método de entrada va a ser generalmente táctil, pudiendo ser fácilmente adaptable a su uso con ratón común.
+
+\end{itemize}
 \subsection{Definición de los elementos de datos y funcionales }
     \subsubsection{Elementos de datos}
     \subsubsection{Elementos funcionales}
@@ -192,35 +236,262 @@ Apoyándonos en Sinnaps, una aplicación para la gestión de proyectos, de la mi
 %----------------------------------------------------------------------------------------
 \section{Bocetos del framework de iteracción}
 
-UNA INTRODUCCION\\
+Estos bocetos estan en myBalsamiq (en la carpeta del grupo 4) y en una carpeta auxiliar que adjuntamos con la memoria de este hito.
 
-PONER EL ESQUEMA/ESQUELETO DE LA APLICACIÓN Y EXPICARLO\\
-
-CONTINUACIÓN PONER UNOS  BOCETOS MUY SENCILLOS (mockaup de baslamyq) PARA MOSTRAR MUY POR ENCIMA EL FUNCIONAMIENTO DE LA APLICACION.\\
-
-
-\newpage
 %--------------------------------------------------------------------------------------------
 %   ESCENARIOS KEYPATH
 %--------------------------------------------------------------------------------------------
 \section{Escenarios keypath}
 
-Partiendo de los escenarios del hito anterior, narramos el proceso de uso de la aplicación para caso. Por ejemplo, Alex quiere reservar una mesa para estudiar. Enciende su movil y accede a la aplicación. Al ser la primera vez que la usa, debe introducir su cuenta de ucm y contraseñas. Las proximas veces que entre no será necesario. Pulsa en el boton de enter y va a la pagina princial. En el meú inferior pulsa el item puesto libre el cual ...
+Partiendo de los escenarios del hito anterior, narramos el proceso de uso de la aplicación para caso. Por ejemplo, Alex quiere reservar una mesa para estudiar. Enciende su movil y accede a la aplicación. Al ser la primera vez que la usa, debe introducir su cuenta de ucm y contraseñas. Las proximas veces que entre no será necesario. Pulsa en el boton de enter y va a la pagina princial. En el meú inferior pulsa el item puesto libre el cual ... 
+ \\
+ \\
+\textbf{\underline{Login}} \\
+ \\
+Al iniciar la aplicación se muestra la pantalla de login (Figura 2). El usuario deberá introducir en los campos ‘Usuario’ y ‘Contraseña’ su cuenta de correo UCM y su contraseña de la misma respectivamente. A continuación, el usuario debe pulsar en el botón ‘Entrar’, su correo y cuenta serán verificadas y si son correctas se le llevará a la siguiente pantalla. Si ya tiene la sesión UCM iniciada en su dispositivo esta pantalla se omite. Una vez iniciada la sesión, se muestra la pantalla principal de la aplicación. (Figura 3)\\
 
+\begin{figure}[!h]
+\centering
+\minipage{0.46\textwidth}
+	\includegraphics[width=0.5\textwidth]{login.png} 
+	\captionof{figure}{}
+\endminipage
+\minipage{0.46\textwidth}
+	\includegraphics[width=0.5\textwidth]{dashboard.png} 
+	\captionof{figure}{}
+\endminipage
+\end{figure}
+
+\textbf{\underline{Ver notificaciones}} \\
+\\
+Para ver las notificaciones el usuario deberá pulsar el icono de la campana, esto desplegará un pop-up con la lista de notificaciones. (Figura 4)
+El usuario puede borrar las notificaciones deslizando el dedo de derecha a izquierda sobre la notificación que desee eliminar. (Figura 6)\\
+
+\begin{figure}[!h]
+\centering
+\minipage{0.46\textwidth}
+	\includegraphics[width=0.5\textwidth]{notificaciones1.png} 
+	\captionof{figure}{}
+\endminipage
+\minipage{0.46\textwidth}
+	\includegraphics[width=0.5\textwidth]{notificaciones2.png} 
+	\captionof{figure}{}
+\endminipage
+\end{figure}
+\begin{figure}[!h]
+\centering
+\minipage{0.46\textwidth}
+	\includegraphics[width=0.5\textwidth]{notificaciones3.png} 
+	\captionof{figure}{}
+\endminipage
+\end{figure}
+
+\newpage
+\textbf{\underline{Búsqueda de libros}} \\
+\\
+El usuario puede acceder a la pantalla de búsqueda de libros pulsando sobre el segundo icono de la barra de menú. (Figura 7) El usuario puede a continuación; buscar y filtrar sus búsquedas con los criterios de los que dispone.
+
+La lista resultante de libros puede ser visualizada en la parte central de la pantalla y permite navegar por la lista con un scroll horizontal que maneja el usuario con el dedo. (Figura 8)\\
+
+\begin{figure}[!h]
+\centering
+\minipage{0.42\textwidth}
+	\includegraphics[width=0.5\textwidth]{busquedaLibros1.png} 
+	\captionof{figure}{}
+\endminipage
+\minipage{0.58\textwidth}
+	\includegraphics[width=0.5\textwidth]{busquedaLibros2.png} 
+	\captionof{figure}{}
+\endminipage
+\end{figure}
+
+\textbf{\underline{Búsqueda de sitio}} \\
+\\
+El usuario puede acceder a la pantalla de búsqueda de sitios pulsando sobre el tercer icono de la barra de menú. (Figura 9) 
+
+A continuación se le muestra al usuario información sobre la biblioteca que le puede ser de interés, en nuestro caso, para acceder y visualizar los sitios, hemos de pulsar sobre el mapa de la biblioteca. (Figura 10) 
+
+Se nos mostrará un mapa general de las 4 zonas de la biblioteca, cada una con un indicativo sobre cuántos sitios libres quedan. Para buscar un sitio concreto, seleccionamos la zona deseada. (Figura 11)
+
+A continuación se muestra un mapa concreto de la sala indicada. Seleccionamos el asiento libre que queramos.(Figura 12) 
+
+La aplicación mostrará un camino desde la entrada de la sala para llegar a nuestro asiento. (Figura 13)\\
+
+\begin{figure}
+\centering
+\minipage{0.45\textwidth}
+	\includegraphics[width=0.45\textwidth]{mapa.png} 
+	\captionof{figure}{}
+\endminipage
+\minipage{0.45\textwidth}
+	\includegraphics[width=0.45\textwidth]{mapa1.png} 
+	\captionof{figure}{}
+\endminipage
+
+\medskip
+
+\minipage{0.45\textwidth}
+	\includegraphics[width=0.45\textwidth]{mapa2.png} 
+	\captionof{figure}{}
+\endminipage
+\minipage{0.45\textwidth}
+	\includegraphics[width=0.45\textwidth]{mapa3.png} 
+	\captionof{figure}{}
+\endminipage
+
+\medskip
+
+\minipage{0.45\textwidth}
+	\includegraphics[width=0.45\textwidth]{mapa4.png} 
+	\captionof{figure}{}
+\endminipage
+\end{figure}
+
+\newpage
+\textbf{\underline{Reserva de sitio}} \\
+\\
+Una vez llegado al sitio, el usuario puede escanear el código QR del sitio para realizar la reserva.
+
+Para ello, primero debe pulsar en el botón ‘SCAN’ del dashboard. (Figura 14) La cámara se encenderá para reconocer el QR. (Figura 14) Una vez reconocido exitosamente el QR la aplicación confirma la reserva y exige confirmación por parte del usuario. (Figura 16) La reserva se ha completado, el usuario es redirigido a un nuevo dashboard en el que puede gestionar su reserva activa.(Figura 17)\\
+
+\begin{figure}[!h]
+\centering
+
+\minipage{0.46\textwidth}
+	\includegraphics[width=0.5\textwidth]{reservaSitio1.png} 
+	\captionof{figure}{}
+\endminipage
+\minipage{0.46\textwidth}
+	\includegraphics[width=0.5\textwidth]{reservaSitio2.png} 
+	\captionof{figure}{}
+\endminipage
+
+\medskip
+
+\centering
+\minipage{0.46\textwidth}
+	\includegraphics[width=0.5\textwidth]{reservaSitio3.png} 
+	\captionof{figure}{}
+\endminipage
+\minipage{0.46\textwidth}
+	\includegraphics[width=0.5\textwidth]{reservaSitio4.png} 
+	\captionof{figure}{}
+\endminipage
+\end{figure}
+
+\newpage
 %--------------------------------------------------------------------------------------------
-%   VALIDACIÓN DE LOS DISEÑOS
+%   ESCENARIOS VALIDACIÓN
 %--------------------------------------------------------------------------------------------
-\section{Validación de los diseños}
+\section{Escenarios de validación}
+En términos generales, es muy difícil generar un flujo de mockups los suficientemente amplio como para estimar todas las interacciones del usuario, y menos aún, las interacciones no previstas. Se han recopilado los casos a partir de un brainstorming basado en la experiencia de los propios miembros del equipo con otras aplicaciones y su propia interpretación de los flujos de los mockups en los supuestos escenarios de validación.
+\\
+\\
+\\
+\textbf{¿Usuario incorrecto, contraseña incorrecta?}
+A parte de reenviar al usuario al formulario de login y marcar en rojo un aviso de
+error de “usuario/contraseña”, independientemente de que ese mail esté registrado o no.
+\\
+\\
+\textbf{¿Desconexión del usuario por falta de cobertura?}
+Este caso tiene más riesgo sobre todo dentro de edificios, ya que los dispositivos pueden sufrir desconexiones interrumpiendo el servicio de la aplicación. En estos casos, el usuario llegaría a una vista no alcanzable mediante interacción normal de la aplicación. 
+Se le mostrará un mensaje solicitando que obtenga una conexión de datos para retomar el funcionamiento normal de la aplicación.
+\\
+\\
+\textbf{¿Cerrar la aplicación cuando está creándose una reserva?}
+Al igual que ocurre con los formularios de registro, un cierre en la aplicación conlleva a la cancelación de la reserva.
+\\
+\\
+\textbf{¿Reconexión?}
+El proceso de reconexión de la aplicación abierta, deben reubicar al usuario en la
+vista en la que se encontraba antes de perder la conexión, si estaba en un periodo
+específico de una reserva, y al reconectarse está ya en otra etapa, el ventana del usuario será actualizada a la nueva vista.
+\\
+\\
+\textbf{El usuario busca un libro que no está en la biblioteca.}
+La búsqueda no devuelve resultados.
+\\
+\\
+\textbf{El usuario vuelve pulsa el botón de añadir a la lista de favoritos un libro que ya está en la lista.}
+El libro es eliminado de la lista de favoritos.
+\\
+\\
+\textbf{El usuario selecciona una zona sin sitios libres para buscar sitio.}
+Aparece un mensaje de error indicando que no hay sitios disponibles e indicando la hora en la que podría liberarse el siguiente asiento.
+\\
+\\
+\textbf{El usuario no recuerda la contraseña.}
+Al pulsar en el enlace en la pantalla de login “¿has olvidado tu contraseña?” es redireccionado a la página web del servicio de correo UCM.
+\\
+\\
+\textbf{El usuario selecciona el icono de idioma en la pantalla de login.}
+Una lista con las distintas opciones de idiomas aparece, el usuario puede seleccionar si cambiar el idioma o no pulsando en retroceder o en el icono de idioma correspondiente.
+\\
+\\
+\textbf{El usuario tiene la pantalla apagada cuando el tiempo de reserva está a punto de expirar.}
+El usuario puede configurar en el menú de opciones con cuánto tiempo y de qué modo se le notifica, por defecto, el móvil empezará a vibrar cuando queden 10 minutos para que expire la reserva.
+\\
+\\
+\textbf{El usuario cierra la aplicación cuando tiene una reserva activa.}
+La aplicación se recupera cuando se abra de nuevo, si no la vuelve a abrir, esta permanece en 2º plano y notificará al usuario cuando su reserva esté a punto de expirar.
+\\
+\\
+\textbf{El usuario cierra la aplicación cuando tiene una reserva activa pero la configuración de su móvil no permite a nuestra aplicación ejecutar en segundo plano.}
+El usuario podrá permanecer en su asiento tanto tiempo como tiempo de reserva quedase, no obstante ese comportamiento inflige los términos de condiciones de uso.
+\\
+\\
+\textbf{El usuario no se encuentra en la biblioteca y abre la cámara para reservar un asiento desde otro sitio haciendo uso de una copia del QR de la mesa.}
+Este comportamiento inflige los términos de condiciones de uso, esta situación no está controlada y si un sitio aparece ocupado y está vacía, otro usuario puede notificarlo al bibliotecario. El bibliotecario puede entonces sancionar al usuario.
+\\
+\\
+\textbf{Un no usuario de la aplicación quiere hacer uso de la biblioteca.}
+El no usuario puede hacer uso de las instalaciones, esta situación será frecuente en un inicio pero sobre la que no se puede tener control, a menos que se tomen medidas que permitan saber qué sillas están siendo ocupadas.
+\\
+\\
+\textbf{El usuario olvida cómo utilizar alguna pantalla u opción del proceso de reserva de sitios o búsqueda de libros.}
+El la sección de opciones, el usuario tiene la opción de ver el tutorial de la sección que le interese.
+\\
+\\
+\textbf{La cámara lee un QR no válido.}
+Se le muestra al usuario un mensaje de error.
+\\
+\\
+\textbf{El usuario busca un libro y sin querer, cambia de menú y navega al dashboard o a otro menú.}
+El menú de búsqueda de libros recuerda el último estado en el que se encontraba para permitir al usuario recuperarse de errores.
+\\
+\\
+\textbf{El usuario realiza reserva libros y olvida cuál es la fecha límite de devolución.}
+El sistema de notificaciones, al estar enlazado con la cuenta UCM, notifica al usuario sobre las fechas próximas en las que vencen sus pedidos.
+\\
+\\
+\textbf{El usuario abre y cierra la aplicación con mucha frecuencia.}
+Si el la configuración y el estado del dispositivo del usuario lo permiten, la cuenta ucm sigue enlazada al dispositivo, por lo que no es necesario hacer el proceso de login múltiples veces.
+
 
 %--------------------------------------------------------------------------------------------
 %   PROCESO ITERATIVO
 %--------------------------------------------------------------------------------------------
 \section{Proceso iterativo}
 
-%--------------------------------------------------------------------------------------------
-%   CONCLUSIONES
-%--------------------------------------------------------------------------------------------
-\section{Conclusiones}
+\textbf{1ª Iteración}:
+Consideramos parte de esta iteración el diseño del flujo principal de la aplicación,
+definido en los “mockups”. En ella nos centramos en plasmar qué pasos y qué funcionalidades debe tener la aplicación basándonos en los requisitos obtenidos en el hito anterior.
+En el proceso del diseño de esta interfaz primitiva, se han ido realizando pequeñas
+correcciones, botones mal ubicados o poco intuitivos principalmente.
+
+\textbf{2ª Iteración}:
+En esta etapa se diseñaron, de forma paralela, lo que podría interpretarse como la
+primera implementación de lo obtenido en la primera iteración.
+\begin{itemize}
+
+\item El primer diseño fue hecho en Balsamiq de forma individual, un diseño por cada miembro del equipo, de forma rápida y con baja calidad. Se centra principalmente en portar, de una forma fiel, los esquemas e ideos de los bocetos.
+\item El segundo diseño, hecho en papel, busca esto mismo, pero arriesgando un poco más su estilo con diseños redondeados más llamativos a la vista. Se centra en recalcar y facilitar “el camino más tomado”. Aquel que la gran mayoría de usuarios va a tomar.
+
+\end{itemize}
+\textbf{3ª Iteración}:
+Finalmente, se ponen en común los dos diseños generados en la etapa anterior.
+Aquellas ventanas en las que se necesite una estructura ordenada heredarán su forma del primero, mientras que aquellas que sean “de paso” y tengan una mayor libertad, seguirán las líneas del segundo diseño.
+
 
 \end{document}
 
