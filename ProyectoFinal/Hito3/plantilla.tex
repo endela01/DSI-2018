@@ -222,8 +222,89 @@ Los miembros del grupo trabajaremos con un esquema descentralizado controlado, d
 
 \end{itemize}
 \subsection{Definición de los elementos de datos y funcionales }
-    \subsubsection{Elementos de datos}
-    \subsubsection{Elementos funcionales}
+
+    Abstrayendonos del habitual concepto de datos y funciones propias de la programación, se han determinado un conjunto de elementos separados para datos y funciones.
+
+\subsubsection{Elementos de datos}
+\begin{itemize}
+
+\item \textbf{\underline{Estado de la reserva}}
+\begin{itemize}
+\item \underline{Atributos}: cancelar, pausar/continuar o ampliar el tiempo de la reserva de 
+       asientos.
+\item \underline{Relación con otros elementos de datos}:
+\begin{itemize}
+\item \textbf{Perfil}: los cambios realizados en el estado de la reserva estarán asociados al perfil del usuario.
+\end{itemize}
+\end{itemize}
+\item \textbf{\underline{Perfil}}
+\begin{itemize}
+\item \underline{Atributos}: modo día/noche, lista de libros favoritos, iniciar/cerrar sesión...
+\item \underline{Relación con otros elementos de datos}: 
+\begin{itemize}
+\item \textbf{Libros}: se guardará la lista de libros favoritos
+\item \textbf{Notificaciones}: se guardará las notificaciones personales de ese perfil
+\item \textbf{Estado de reserva}: tendrá un único estado de reserva por perfil
+\end{itemize}
+\end{itemize}
+\item \textbf{\underline{Libros}}
+\begin{itemize}
+\item \underline{Atributos}: estado libro (favorito o no favorito)
+\item \underline{Relación con otros elementos de datos}:
+\begin{itemize}
+\item \textbf{Perfil}: se guardará en un perfil dependiendo si su atributo este con un estado favorito en concreto
+\end{itemize}
+\end{itemize}
+\item \textbf{\underline{Notificaciones}}
+\begin{itemize}
+\item \underline{Atributos}: eliminar notificación
+\item \underline{Relación con otros elementos de datos}: 
+\begin{itemize}
+\item \textbf{Perfil}: se guardará en un perfil las notificaciones que no se hayan guardado
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Elementos funcionales}
+\begin{enumerate}
+
+\item \textbf{\underline{Sitios}:}\\
+\textbf{Reservar}\\
+Acción que permite la selección de un sitio en concreto para conservar o retener su disponibilidad durante un tiempo determinado.\\
+\textbf{Cancelar reserva}\\
+Anulación del estado de la reserva para detenerlo definitivamente. \\
+\textbf{Ampliar tiempo de reserva}\\
+Aumento del tiempo del temporizador para que el usuario pueda incrementar en cualquier momento su reserva en su sitio.\\
+\textbf{Pausar tiempo de reserva}\\
+Detención momentánea del temporizador de reserva para que el usuario pueda tener un tiempo X.\\
+\textbf{Buscar}\\
+La búsqueda se hace a través de un mapa el cual está dividido en distintos bloques de la biblioteca despues se seleccionara donde se visualiza en ese mismo momento la región del mapa que se ha seleccionado.         
+
+\item \textbf{\underline{Login}:}\\
+\textbf{Iniciar sesión}\\
+Permite a un usuario autenticarse en la aplicación y empezar a utilizar nuestros servicios.\\
+\textbf{Cerrar sesión}\\
+Permite finalizar la conexión del usuario a nuestro servicio al cerrar la aplicación.\\
+    
+\item \textbf{\underline{Notificaciones}:}\\
+\textbf{Ver }\\
+Visualización de mensajes que le llegan al usuario relacionadas con la biblioteca o su perfil.\\
+\textbf{Eliminar }\\
+Eliminación de las notificaciones previa selección de las mismas por el usuario.\\
+
+\item \textbf{\underline{Libros}:}\\
+\textbf{Añadir a favoritos}\\
+Incorporación de un libro determinado previamente seleccionado a una lista del perfil del usuario.\\
+\textbf{Eliminar de favoritos}\\
+Exclusión de uno o más libros seleccionados de una lista creada por el usuario.\\
+\textbf{Búsqueda estándar}\\
+Rastreo de libros, a través, de un nombre en concreto de este.\\
+\textbf{Búsqueda relacionada}\\
+Rastreo de los libros que están relacionados con un libro específicamente.\\
+\textbf{Localización}\\
+Lugar (estantería y zona) donde se encuentra un libro.
+
+\end{enumerate}
 \newpage
 \section{Esquema del framework de interacción}
 
