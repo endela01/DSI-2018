@@ -1,0 +1,254 @@
+%----------------------------------------------------------------------------------------
+%	PAQUETES Y OTRAS COSAS DE CONFIGURACION
+%----------------------------------------------------------------------------------------
+%\documentclass[a4paper,man,natbib,scrbook]{apa6}
+\documentclass[12pt]{article}
+
+% esto es una prueba de comment
+\usepackage[spanish]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+%\usepackage[colorinlistoftodos]{todonotes} %PAQUETE QUE FALLA JULIO
+\usepackage[bottom]{footmisc}
+%\usepackage{blindtext} %PAQUETE QUE FALLA JULIO
+\usepackage{caption}
+\graphicspath{ {images/} }
+%\graphicspath{{/home/cursoredes/images/}}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{hyperref} %INDICE CON VINCULOS
+\usepackage{csquotes}
+\usepackage{mdframed}
+
+%----------------------------------------------------------------------------------------
+%	PAGE HEADERS
+%----------------------------------------------------------------------------------------
+\setlength{\headheight}{15pt}
+
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{ \markright{#1} }
+
+% L=left, R=right, E=even, O=odd
+
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage} %Numero pagina
+\fancyhead[RE]{\textit{ \nouppercase{\leftmark}} }
+\fancyhead[LO]{\textit{ \nouppercase{\rightmark}} }
+
+\fancypagestyle{plain}{ 
+  \fancyhf{} 
+  \renewcommand{\headrulewidth}{0pt} 
+  \renewcommand{\footrulewidth}{0pt}
+}
+%------------------------------------------------
+%
+%------------------------------------------------
+
+\begin{document}
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
+
+\center % Centra todo
+ 
+ 
+%----------------------------------------------------------------------------------------
+%	LOGO SECCION
+%----------------------------------------------------------------------------------------
+
+\textsc{\LARGE Universidad Complutense de Madrid}\\[0.1cm] % Universidad
+
+\begin{center}
+	\centering
+	\includegraphics[width=0.5\textwidth]{logo}
+\end{center}
+ 
+ 
+%----------------------------------------------------------------------------------------
+%	HEADING SECCION
+%----------------------------------------------------------------------------------------
+
+\textsc{\LARGE Grupo 4}\\[0.1cm] % Grupo
+%\textsc{\Large Heading 1}\\[0.5cm] % Heading mayor
+%\textsc{\large Heading 2}\\[0.5cm] % Heading menor
+
+%\textsc{\LARGE Grupo 4}\\[1cm]
+
+%----------------------------------------------------------------------------------------
+%	TITULO SECCION
+%----------------------------------------------------------------------------------------
+
+\HRule \\[0.4cm]
+{ \huge \bfseries HITO 1: }\\[0.4cm] % Titulo
+{ \huge \bfseries INVESTIGACIÓN }\\[0.2cm] % Titulo
+\HRule \\[1.2cm]
+ 
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Autores:}\\
+Ángel \textsc{Cruz} \\ %Nombres
+Julio \textsc{de la Cruz} \\
+Eduardo \textsc{Alcober}\\
+Sergio \textsc{Gómez}\\
+Isauro \textsc{López}\\
+Darío \textsc{Gallegos}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Profesor:} \\
+Antonio \textsc{Sánchez} % NOMBRE PROFESOR
+\end{flushright}
+\end{minipage}\\[0.66cm]
+%----------------------------------------------------------------------------------------
+%	FECHA SECCION
+%----------------------------------------------------------------------------------------
+%{\large 2 de diciembre de 2018}\\[0.5cm] % Fecha
+
+%---------------------------------------------------------------------------------------
+%	CONTENIDO
+%----------------------------------------------------------------------------------------
+
+\vfill % Rellenar el resto con espacio en blanco
+
+\end{titlepage}
+
+
+%\maketitle
+%\footnotetext{EJEMPLO DE NOTA A PIE DE PAGINA}
+
+\tableofcontents % Indice de contenidos
+\newpage
+
+\section{Introducción}
+Nuestra aplicación está enfocada a cubrir las necesidades del personal de la Biblioteca María Zambrano y a los estudiantes que le dan uso.
+\\
+\\
+Nuestro objetivo principal se puede resumir en la siguiente frase:
+“desarrollar una aplicación que mejore la experiencia de uso de la biblioteca”.
+\\
+\\
+Para llevar esta idea a cabo, debemos conocer a nuestros futuros usuarios, aprender de sus necesidades, expectativas y construir el diseño en base a ellas. Los resultados de esta investigación definirán tanto el desarrollo como el producto final. Esta fase posee es de gran importancia pues en función de los resultados obtenidos se desarrollará las sucesivas fases, y es que, los factoides generados ahora, determinarán nuestro margen de evolución a lo largo del diseño de nuestra idea.
+\\
+\\
+Para completar esta fase de investigación, cumpliendo las fechas, realizaremos un reparto de tareas y recursos. 
+\section{Enfoque inicial}
+Antes de empezar a realizar las entrevistas y cuestionarios a los posibles candidatos necesitábamos tener una idea básica de a quién iría dirigida nuestra aplicación. En primer lugar, se habló de cinco tipos de usuarios:
+\begin{itemize}
+
+\item \textbf{Estudiantes}: Aquellos que asisten a estudiar en la biblioteca.
+\item \textbf{Personal}: Son los trabajadores de la biblioteca.
+\item \textbf{Docentes}: Aquellos profesores que acuden a la biblioteca.
+\item \textbf{Particulares}: No son estudiantes de la UCM, pero van a la biblioteca.
+\item \textbf{Erasmus}: Estudiantes extranjeros que usan la biblioteca.
+
+\end{itemize}
+Al final hemos decido acotar el número de usuarios para centrarnos en los más importantes: estudiantes, Erasmus y el personal.
+\section{Reparto de tareas}
+Hemos decidido distribuir la etapa de investigación en tres fases:
+
+\subsection{Primera Fase}
+La primera actividad es hacer un Screener que nos permita encontrar a los posibles candidatos de las entrevistas. El objetivo es hallar la mayor diversidad posible en cuanto a los participantes se refiere.
+\\
+\\
+	Una vez terminada la primera fase, dedicaremos todos los recursos a generar los guiones para las entrevistas y cuestionarios. Los guiones serán una base para realizar las entrevistas, y será decisión del entrevistador seguirlo tal cual o hacer modificaciones a medida que se desarrolle la conversación. El cuestionario es una herramienta para obtener información. Nos permitirá realizar un análisis estadístico complementado la información de las entrevistas. 
+\\
+\\
+	Aproximadamente nos llevará cuatro días.
+\subsection{Segunda Fase}
+La etapa principal del hito, y en la que invertiremos más tiempo. En ella se realizará la redacción del documento, envío masivo de los cuestionarios y grabación de las entrevistas.
+\\
+\\
+Hemos repartido el trabajo de la siguiente manera. La mitad del equipo se dedicará a realizar la documentación de la memoria y la otra mitad se ocupará de realizar las entrevistas. Los cuestionarios se enviarán conjuntamente. Al ser ocho miembros en el equipo se ha acordado realizar de seis y ocho entrevistas.
+\\
+\\
+El resto de tareas como el plan de investigación, el estudio y el análisis de la competencia serán asignados por preferencia intentado que todos los miembros tengan la misma carga de trabajo.
+\\
+\\
+En paralelo se ha iniciado un plan de investigación para conocer las ofertas del mercado, la posible competencia y el alcance de la aplicación. Los escenarios para el estudio de la competencia serán la web y las apps móviles.
+\\
+\\
+El tiempo de duración será de unos doce días.
+\subsection{Tercera Fase}
+Analizar la información y formalizar es la principal actividad de la esta fase. El objetivo es obtener resultados detallados del análisis, resultados visuales como gráficos y la lista de factoides. Trabajaremos en ella hasta el día de la entrega del hito.
+
+\section{Entrevistas de usuarios}
+Para el proceso de recopilación de información relevante para la creación de nuestra aplicación, por medio del grupo decidimos incluir un proceso de entrevistas a usuarios de la biblioteca. Después de generar una plantilla que acompañe dichas entrevistas, conseguimos seleccionar candidatos obtenidos tanto conocidas como desconocidas al entorno del grupo.
+\\
+\\
+El objetivo principal fue la motivación de acotar a los posibles candidatos, ya que los mismos fueron muy receptivos por los fines que tiene la aplicación. 
+\\
+\\
+Los candidatos seleccionados podrían pertenecer a tres tipos de usuario: estudiantes UCM, estudiantes Erasmus y personal de la biblioteca. Para asegurar la obtención de información útil, decidimos crear un guion principal que pudiese servir en las entrevistas en grupo o individual y así pudiésemos interpretar dicho guion en relación de las respuestas de los entrevistados.
+\\
+\\
+El guion contiene un párrafo legal que incluiríamos en las próximas entrevistas con el objetivo de respetar los datos de carácter personal en las mismas.
+\newpage
+Consentimiento Legal:
+\begin{mdframed}
+         Estamos trabajando en el desarrollo de una aplicación con el objetivo de ayudar a mejorar la reserva y agilización de las mesas/puestos en la biblioteca María Zambrano. 
+             El contenido de esta entrevista y la información resultante de la misma, será usado solo con fines académicos.
+             Nos comprometemos a no difundir dicho contenido. 
+[NOMBRE] ¿aceptas ser grabado/a en esta entrevista?
+\end{mdframed}
+
+\subsection{Screener previo}
+\subsection{Planificación de las entrevistas}
+\subsection{Guion de entrevistas}
+\subsection{Análisis de entrevistas}
+\section{Preparación y estudio de la encuesta online}
+\subsection{Redacción de la encuesta}
+\subsection{Resultados e interpretación}
+\subsection{Conclusiones de la encuesta}
+\section{Estudio de la competencia}
+\subsection{Criterio de selección}
+\subsection{Criterio de evaluación}
+\subsection{Aplicaciones analizadas}
+\section{Conclusiones}
+\section{Lista de factoides}
+
+\end{document}
+
+%COMENTAARIOS
+% \todo[inline, color=green!40]{EJEMPLO DE COMENTARIO}
+
+% PARA INCLUIR UNA FOTOGRAFIA:
+%\begin{figure}
+%\centering
+%\includegraphics[width=0.5\textwidth]{~/DIRECCION/A/IMAGEN.jpg}
+%\caption{\label{fig:imagen}DESCRIPCION.}
+%\end{figure}
+
+% \dots
+
+% ENUMERACION:
+%\begin{enumerate}
+%\item Enumeracion 1
+%\item Enumeracion 2
+%\end{enumerate}
+
+%\begin{itemize}
+%\item PUNTO 1
+
+% PARA INCLUIR UNA TABLA:
+%\begin{table}[h] %LA h PARA INDICAR QUE LA TABLA NO SEA FLOATING
+%\centering
+%\begin{tabular}{l|r}
+%Fila 0 \\\hline
+%Fila 1 & Contenido 1 \\
+%Fila 2 & Contenido 2
+%\end{tabular}
+%\caption{\label{tab:widgets}Ejemplo de tabla.}
+%\end{table}
+
+%\item PUNTO 2
+%\end{itemize}
+
+%\bibliography{BIBLIOGRAFIA}
+
+
