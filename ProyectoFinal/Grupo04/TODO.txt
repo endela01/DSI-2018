@@ -1,0 +1,2 @@
+- Añadir memoria final aquí.
+- Añadir carpeta 'EvalUsuarios' con los cuestionarios y entrevistas del hito5.
