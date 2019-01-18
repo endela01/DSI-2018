@@ -540,50 +540,55 @@ Inés antes de terminar su jornada laboral, abre la aplicación nuevamente para 
 %------------------------------------------------------------------------------------------------------------
 \subsection{Identificación de requisitos}
 
+Vamos a identificar, en cada requisito, la terna:\\ \textbf{(A)Accion+(O)Objeto+(C)Contexto.}
+
 %-----------------Requisitos de datos---------------------------------
 \subsubsection{Requisitos de datos}
 \begin{itemize}[noitemsep] 
-\item Representación de ejemplar Calendario. Cada usuario puede configurar cinco calendarios. 
-\item Ejemplar Tarea.
-\item Listas de Tareas (filtrable).
-\item Avisos ligados a tareas.
-\item Listado de eventos donde poder filtrar (por estado, fecha…) para consultar su estatus. Necesaria jerarquía de usuarios para el acceso versión bibliotecario (Jefes equipo / Personal Biblioteca).
-\item Representación de los puestos disponibles en las salas de la biblioteca según sus servicios disponibles y las franjas de tiempo de uso. También se gestiona una lista de puestos favoritos.
-\item Representación de mapas conceptuales de los puestos con su código y estado.
-\item Perfil de puesto de estudio, que incluye servicios, estado. En caso de estar ocupado muestra la hora que se quedará libre.
-\item Ficha de libros de catálogo tiene una interacción con programación de avisos si el libro seleccionado está ocupado. 
-\item Un usuario puede marcar como favorito un libro lo que incrementa el contador de favoritos y se añade a lista favoritos del usuario
-\item En el perfil personal existe: una imagen, descripción, contacto, followers y following, estadísticas e información institucional
+\item (A)Representación de (O)ejemplar Calendario. (C)Cada usuario puede configurar un número limitado de calendarios. 
+\subitem Ejemplar Tarea.
+\subitem Listas de Tareas (filtrable).
+\subitem Avisos ligados a tareas.
+\subitem Listado de eventos donde poder filtrar (por estado, fecha…) para consultar su estatus. 
+\item Necesaria (O)jerarquía de usuarios para el (A)acceso versión bibliotecario (C)(Jefes equipo / Personal Biblioteca).
+\item (A)Representación de los (O)puestos disponibles en las (C)salas de la biblioteca según sus servicios disponibles y las franjas de tiempo de uso. 
+\subitem También se gestiona una lista de puestos favoritos.
+\item (A)Representación de (C)mapas conceptuales de los (O)puestos con su código y estado. Igualmente de las (O)salas de libros.
+\subitem Perfil de puesto de estudio, que incluye servicios, estado. En caso de estar ocupado muestra la hora que se quedará libre.
+\subitem Ficha de libros de catálogo tiene una interacción con programación de avisos si el libro seleccionado está ocupado. 
+\subsubitem Un usuario puede marcar como favorito un libro lo que incrementa el contador de favoritos y se añade a lista favoritos del usuario.
+\item (C)En el perfil personal (A)existe: (O)una imagen, descripción, contacto, followers y following, estadísticas e información institucional.
 \end{itemize}
 %-----------------Requisitos de funcionales------------------------------
 \subsubsection{Requisitos funcionales}
 \begin{itemize}[noitemsep]
-\item Incorporar una función de calendario/agenda. que permita programar eventos y avisos.
-\item Además de los eventos añadidos por el usuario, se añadirán automáticamente los límites de estancia cuando se reserve un puesto, la hora de devolver determinado equipo informático o la fecha de devolución del ejemplar solicitado en la biblioteca.
-\item Se podrá invitar a otros usuarios de la aplicación y avisarlos conjuntamente cuando venza el evento al que se inscriban, previa confirmación.
-\item Calendario tiene las funciones de importar archivo calendario, nuevo calendario, eliminar calendario, fusionar calendario. En él hay tareas como añadir tarea, eliminar tarea, listar tareas por día, listar tareas por mes, añadir participantes (por admin de equipo de bibliotecarios/un estudiante puede añadir otros estudiantes) allí hay una ficha tarea que permite programar avisos, cambiar nombre y cambiar horas
-\item La aplicación muestra un mapa, accesible  por salas, de los puestos libres y ocupados, actualizado en cada consulta.
-\item Puedes pedirle al sistema que te avise mediante email o notificación cuando se quede libre determinado puesto.
-\item Asientos distribuidos por sala en un área tienen un perfil de puesto (ej 232-C, el número de asiento) con unos servicios como marcar favorito, comentario de otros usuarios y opc. valorar, y unas prestaciones como el nº de enchufes o si tiene ordenador
-\item Hace la reserva de libros, muestra todos los ejemplares idénticos y en qué biblioteca se encuentran y los organiza por disponibilidad.
-\item Puedes pedirle al sistema que te avise mediante email o notificación cuando se devuelva el libro para poder hacer la reserva. 
-\item Comprobar si el libro al que se le quiere hacer la reserva (y todos los libros con el mismo nombre) está disponible, si no lo está, indica la fecha en la que tiene que ser devuelto y el estado de devolución de este (por si no lo devuelven a tiempo)
-\item Si activas el aviso, el libro se “pre-reserva” durante 1 día para que el usuario que lo devuelva no pueda reservarlo de nuevo justo en ese momento.
-\item Notificaciones de la app: puestos de estudio, solicitudes de chat, nuevo follower, respuestas a comentarios y avisos de puestos
-\item Notificaciones bibliotecario: Entrega de libro caducada, libro sin ejemplares disponibles, aforo completo, libros reservados y tareas inconclusas (Estas son notificaciones extras por tipo de usuario)
-\item Poder organizar los libros de la búsqueda y del apartado “favoritos” por categorías y autores, así como añadir o eliminar nuevos libros a favoritos.
-\item En la biblioteca hay un buscador que encuentra los perfiles de los libros seleccionados y  tiene las opciones de reservar, marcar favorito y ver comentarios de otros usuarios con enlace a sus perfiles con la posibilidad de follow o valoración de 1 a 5 estrellas
-\item Enlazado al perfil personal del estudiante está el apartado “favoritos” donde el usuario puede gestionar esta lista de forma privada
+\item Incorporar una (O)función de calendario/agenda. que permita (A)programar eventos y avisos (C)desde el Dashboard.
+\subitem Además de los eventos añadidos por el usuario, se añadirán automáticamente los límites de estancia cuando se reserve un puesto, la hora de devolver determinado equipo informático o la fecha de devolución del ejemplar solicitado en la biblioteca.
+\subitem Se podrá invitar a otros usuarios de la aplicación y avisarlos conjuntamente cuando venza el evento al que se inscriban, previa confirmación.
+\item (O)Calendario tiene las funciones de (A)importar archivo calendario, nuevo calendario, eliminar calendario, fusionar calendario. En él hay tareas como añadir tarea, eliminar tarea, listar tareas por día, listar tareas por mes, añadir participantes (C)(por admin de equipo de bibliotecarios/un estudiante puede añadir otros estudiantes) allí hay una ficha tarea que permite programar avisos, cambiar nombre y cambiar horas.
+\item La aplicación (A)muestra un (O)mapa, accesible  por salas, (C)de los puestos libres y ocupados, actualizado en cada consulta.
+\subitem Puedes pedirle al sistema que te avise mediante email o notificación cuando se quede libre determinado puesto.
+\item (O)Asientos distribuidos por (C)sala en un área tienen un perfil de puesto (ej 232-C, el número de asiento) con unos (A)servicios como marcar favorito, comentario de otros usuarios y opc. valorar, y unas prestaciones como el nº de enchufes o si tiene ordenador.
+\item Hace la (A)reserva de (O)libros, muestra todos los ejemplares idénticos y en qué (C)biblioteca se encuentran y los organiza por disponibilidad.
+\subitem Puedes pedirle al sistema que te avise mediante email o notificación cuando se devuelva el libro para poder hacer la reserva. 
+\subitem Comprobar si el libro al que se le quiere hacer la reserva (y todos los libros con el mismo nombre) está disponible, si no lo está, indica la fecha en la que tiene que ser devuelto y el estado de devolución de este (por si no lo devuelven a tiempo).
+\subitem Si activas el aviso, el libro se “pre-reserva” durante 1 día para que el usuario que lo devuelva no pueda reservarlo de nuevo justo en ese momento.
+\item (A)Notificaciones de la (C)app: (O)puestos de estudio, solicitudes de chat, nuevo follower, respuestas a comentarios y avisos de puestos.
+\item (A)Notificaciones (C)bibliotecario: (O)Entrega de libro caducada, libro sin ejemplares disponibles, aforo completo, libros reservados y tareas inconclusas (Estas son notificaciones extras por tipo de usuario).
+\subitem Poder organizar los libros de la búsqueda y del apartado “favoritos” por categorías y autores, así como añadir o eliminar nuevos libros a favoritos.
+\item (C)En la biblioteca hay un buscador que encuentra los perfiles de los (O)libros seleccionados y  tiene las opciones de (A)reservar, marcar favorito y ver comentarios de otros usuarios con enlace a sus perfiles con la posibilidad de follow o valoración de 1 a 5 estrellas.
+\subitem Enlazado al perfil personal del estudiante está el apartado “favoritos” donde el usuario puede gestionar esta lista de forma privada y eficiente.
 \end{itemize}
 
 %-----------------Requisitos de contexto------------------------------
 \subsubsection{Requisitos de contexto}
 \begin{itemize}[noitemsep]
-\item Esta funcionalidad ha de estar implementada tanto en la versión de escritorio como en la de móvil.
-\item Simplificar la interfaz de la versión móvil respecto a la de escritorio para facilitar la comprensión de los procesos a usuarios menos avanzados, o que utilizan la aplicación “en movimiento” mientras se desplazan de un sitio a otro.
-\item No se podrá reservar un puesto si la cuenta con la que se realiza la reserva está sancionada.
-\item No se podrá reservar más de un puesto con una única cuenta. Sin embargo se pueden reservar mas entregando el id del resto de cuentas. Si los dueños de estas cuentas no aparecen se les sancionara la cuenta. Si los dueños afirman no haber dado permiso para que su cuenta se utilice para la reserva de dichos puestos se investigará el caso y se procederá a jurisdicción de los empleados (de seguridad o los bibliotecarios).
-\item No se podrá reservar un libro más de 3 veces (45 días) y no se podrá reservar el mismo libro inmediatamente después de la devolución si otro estudiante también quiere reservarlo.
+\item (A)Simplificar la (O)interfaz de la versión móvil respecto a la de escritorio para facilitar la comprensión de los procesos a (C)usuarios menos avanzados, o que (C)utilizan la aplicación “en movimiento” mientras se desplazan de un sitio a otro.
+\item No se podrá (A)reservar un (O)puesto si la cuenta con la que se realiza la reserva (C)está sancionada.
+\item (A)No se podrá reservar más de (O)un puesto con (C)una única cuenta. 
+\subitem Sin embargo se pueden reservar mas entregando el id del resto de cuentas. Si los dueños de estas cuentas no aparecen se les sancionara la cuenta. Si los dueños afirman no haber dado permiso para que su cuenta se utilice para la reserva de dichos puestos se investigará el caso y se procederá a jurisdicción de los empleados (de seguridad o los bibliotecarios).
+\item (A)No se podrá reservar (O)un libro (C)más de 3 veces (45 días).
+\subitem Por extensión, no se podrá reservar el mismo libro inmediatamente después de la devolución si otro estudiante también quiere reservarlo.
 \end{itemize}
 
 \end{document}

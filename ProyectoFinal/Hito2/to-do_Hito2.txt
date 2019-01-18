@@ -5,13 +5,13 @@ HITO2-HECHO:
 - Identificación de las personas (falta expectativas) - EDU
 - Creación de esqueletos => han de tener más entidad, nombre, rango de edades, curso... para que luego se puedan expandir en personas. - EDU
 - Justificar tener en cuenta Estudiantes no complutenses.- EDU
+- Requisitos corregir en forma = Aaccion(a)+Objeto(o)+Contexto(C) - EDU
 
 HITO2-POR HACER:
 ----------------
 - Actualizar las fichas de la memoria (personas)
 -Tipos de personas => Cada persona 1 interfaz. Poner nombre a los esqueletos y referirnos a ellos en la ident. de personas.
 - Dejar claro que en caso de desarrollarse la interfaz para Bibliotecarias / personal no es accesible desde el movil
-- Requisitos corregir en forma = Aaccion(a)+Objeto(o)+Contexto(C) 
 -Especificar nos centramos en interfaz del alumno con
 	reserva de puestos
 	notificaciones
