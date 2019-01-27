@@ -1,2 +1,1 @@
-- Añadir memoria final aquí.
-- Añadir carpeta 'EvalUsuarios' con los cuestionarios y entrevistas del hito5.
+-Mover los hitos fuera de las carpetas y dejadlos en la raiz
