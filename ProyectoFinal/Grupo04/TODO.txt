@@ -1,1 +1,0 @@
--Mover los hitos fuera de las carpetas y dejadlos en la raiz
